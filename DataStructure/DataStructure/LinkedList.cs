@@ -33,6 +33,20 @@ namespace DataStructure
 
         }
 
+        public void AppendNode(Node node)           // 70 30 56
+        {
+            if (Head == null && Tail == null)
+            {
+                Head = node;
+                Tail = node;
+            }
+            else
+            {
+                Tail.next = node;
+                Tail = node;
+            }
+        }
+
         internal void Display()
         {
             Node temp = Head;
