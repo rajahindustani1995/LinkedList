@@ -47,12 +47,34 @@ namespace DataStructure
             }
         }
 
+
+        public void InsertNode(int value, int Previousvalue)
+        {
+            Node newNode = new Node(value);
+            if (Head == null & Tail == null)
+            {
+                Head = newNode;
+            }
+            else
+            {
+                Node temp = Head;
+                //Checking until temp variable data equal to the previous value of value to be added
+                while (temp.data != Previousvalue)
+                {
+                    temp = temp.next;
+                }
+                newNode.next = temp.next;
+                temp.next = newNode;
+            }
+        }
+
+
         internal void Display()
         {
-            Node temp = Head;
-            if (temp == null)
+             Node temp = Head;
+             if (temp == null)
                 Console.WriteLine("Linked List is empty");
-            else
+             else
                 Console.WriteLine("Linked List");
             while (temp != null)
             {

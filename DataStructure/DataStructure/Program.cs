@@ -10,7 +10,7 @@
             Node node3 = new Node(56);
             linkedList.AppendNode(node1);
             linkedList.AppendNode(node2);
-            linkedList.AppendNode(node3);
+            linkedList.ChangePosition(30, 56);
             linkedList.Display();
         }
     }
