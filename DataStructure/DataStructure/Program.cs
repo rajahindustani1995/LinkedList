@@ -11,8 +11,8 @@
             linkedList.AddNode(node1);
             linkedList.AddNode(node2);
             linkedList.AddNode(node3);
-            Console.WriteLine("Delete First element");
-            linkedList.DeleteNodeAtFirst();
+            Console.WriteLine("Delete Last element");
+            linkedList.DeleteNodeAtLast();
             linkedList.Display();
         }
     }
