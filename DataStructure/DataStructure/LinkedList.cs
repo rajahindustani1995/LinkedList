@@ -186,6 +186,38 @@ namespace DataStructure
             Console.WriteLine("Linked List size is : " + size);
         }
 
+        internal void OrderedList(int data)
+        {
+            Node newNode = new Node(data);
+
+            Node tempHead = Head;
+
+            
+            if (Head == null || Head.data >= newNode.data)
+            {
+                
+                newNode.next = Head;
+
+                
+                Head = newNode;
+            }
+
+            else
+            {
+                
+                while (tempHead.next != null && tempHead.next.data < newNode.data)
+                {
+                    tempHead = tempHead.next;
+                }
+
+                //then newNode will be inserted after tempHead node
+                newNode.next = tempHead.next;
+                tempHead.next = newNode;
+            }
+            Console.WriteLine(newNode.data + " is inserted in the Linked List");
+        }
+
+
 
         internal void Display()
         {
