@@ -104,7 +104,6 @@ namespace DataStructure
         {
             Node tempHead = Head;
 
-            //Declaring variable position to record the position of our tempHead node
             int position = 1;
 
             if (Head == null)
@@ -114,13 +113,38 @@ namespace DataStructure
             }
             while (tempHead.next != null)
             {
-                //If our desired value is found in the list
+                
                 if (tempHead.data == value)
                 {
                     Console.WriteLine("Value " + value + " is found at position " + position);
                 }
                 tempHead = tempHead.next;
                 position++;
+            }
+        }
+
+        internal void InsertNewNode(int value, int data)
+        {
+            Node tempHead = Head;
+            Node newNode = new Node(data);
+
+            if (Head == null)
+            {
+                Console.WriteLine("Linked List is empty");
+                return;
+            }
+
+            while (tempHead.next != null)
+            {
+                //If our desired value is found in the list after which we want to insert our node
+                if (tempHead.data == value)
+                {
+                    Console.WriteLine(newNode.data + " is inserted after " + tempHead.data);
+                    newNode.next = tempHead.next;
+                    tempHead.next = newNode;
+                    break;
+                }
+                tempHead = tempHead.next;
             }
         }
 
