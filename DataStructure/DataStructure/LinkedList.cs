@@ -68,7 +68,7 @@ namespace DataStructure
             }
         }
 
-        public void DeleteNodeAtFirst()
+        public void DeleteFirstNode()
         {
             if (Head == null & Tail == null)
             {
@@ -81,7 +81,7 @@ namespace DataStructure
             Console.WriteLine("Removed from linkedlist :" + temp.data);
         }
 
-        public void DeleteNodeAtLast()
+        public void DeleteLastNode()
         {
 
             if (Head == null & Tail == null)
@@ -100,7 +100,29 @@ namespace DataStructure
            
             temp.next = null;
         }
+        internal void Search(int value)
+        {
+            Node tempHead = Head;
 
+            //Declaring variable position to record the position of our tempHead node
+            int position = 1;
+
+            if (Head == null)
+            {
+                Console.WriteLine("Linked List is empty");
+                return;
+            }
+            while (tempHead.next != null)
+            {
+                //If our desired value is found in the list
+                if (tempHead.data == value)
+                {
+                    Console.WriteLine("Value " + value + " is found at position " + position);
+                }
+                tempHead = tempHead.next;
+                position++;
+            }
+        }
 
         internal void Display()
         {
