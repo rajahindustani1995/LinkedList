@@ -11,7 +11,8 @@
             linkedList.AddNode(node1);
             linkedList.AddNode(node2);
             linkedList.AddNode(node3);
-            linkedList.InsertNewNode(30,40);
+            linkedList.DeleteNode(40);
+            linkedList.ListSize();
             linkedList.Display();
         }
     }

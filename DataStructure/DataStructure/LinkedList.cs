@@ -123,7 +123,8 @@ namespace DataStructure
             }
         }
 
-        internal void InsertNewNode(int value, int data)
+        internal void InsertNewNode(int value, int data)  //int value - the node after which new node should added
+                                                          //int data  - the new data or new node
         {
             Node tempHead = Head;
             Node newNode = new Node(data);
@@ -136,7 +137,7 @@ namespace DataStructure
 
             while (tempHead.next != null)
             {
-                //If our desired value is found in the list after which we want to insert our node
+                
                 if (tempHead.data == value)
                 {
                     Console.WriteLine(newNode.data + " is inserted after " + tempHead.data);
@@ -147,6 +148,44 @@ namespace DataStructure
                 tempHead = tempHead.next;
             }
         }
+
+        internal void DeleteNode(int value)
+        {
+            Node tempHead = Head;
+
+            if (Head == null)
+            {
+                Console.WriteLine("Linked List is empty");
+                return;
+            }
+            
+            while (tempHead.next != null)
+            {
+                
+                if (tempHead.next.data == value)
+                {
+                    tempHead.next = tempHead.next.next;
+                    Console.WriteLine("The value " + value + " is deleted from the list");
+                }
+                tempHead = tempHead.next;
+            }
+        }
+
+        
+        internal void ListSize()
+        {
+            
+            int size = 0;
+
+            Node tempHead = Head;
+            while (tempHead != null)
+            {
+                tempHead = tempHead.next;
+                size++;
+            }
+            Console.WriteLine("Linked List size is : " + size);
+        }
+
 
         internal void Display()
         {
